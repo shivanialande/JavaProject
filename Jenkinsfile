@@ -11,6 +11,11 @@ pipeline{
       sh 'mvn clean package'
     }
    }
+  stage('Building of Docker Image'){
+   steps{
+     sh 'docker build -t JavaProject:1.0 .'
+   }
+  } 
  }
 }
   
