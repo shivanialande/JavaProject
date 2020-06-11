@@ -1,4 +1,4 @@
 FROM openjdk:8
 RUN mkdir /app
-COPY *.jar /app/app.jar
+COPY /var/lib/jenkins/workspace/ArtifactsDeployToServer/target/JavaArtifact-1.0.0.jar /app/app.jar
 CMD java -jar /app/app.jar
