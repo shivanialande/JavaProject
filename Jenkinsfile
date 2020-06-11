@@ -13,7 +13,7 @@ pipeline{
    }
   stage('Building of Docker Image'){
    steps{
-     sh 'docker build -t javaproject:1.0 .'
+     sh 'docker build -t javaproject:1.0 /home/ubuntu/JavaProject'
    }
   } 
  }
