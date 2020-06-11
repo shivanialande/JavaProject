@@ -23,7 +23,7 @@ pipeline{
   }
   stage('Deployment'){
    steps{
-     sh 'docker run -p 8090:8090 --name Hotel_Management_Application -d javaproject:1.0'
+     sh 'docker run -p 8090:8090 --name HotelManagementApplication -d javaproject:1.0'
  }
 }
 }
