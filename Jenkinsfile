@@ -11,11 +11,21 @@ pipeline{
       sh 'mvn clean package'
     }
    }
+  stage('Test'){
+   steps{
+     sh 'mvn test'
+   }
+  }
   stage('Building of Docker Image'){
    steps{
      sh 'docker build -t javaproject:1.0 /home/ubuntu/JavaProject'
    }
-  } 
+  }
+  stage('Deployment'){
+   steps{
+     sh ' docker run -p 8090:8090 --name Hotel Management Application -d javaproject:1.0
  }
+}
+}
 }
   
