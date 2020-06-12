@@ -18,8 +18,7 @@ pipeline{
   }
   stage('Building of Docker Image'){
    steps{
-     sh 'cp /var/lib/jenkins/workspace/ArtifactsDeployToServer/target/JavaArtifact-1.0.0.jar /home/ubuntu/JavaProject/'
-     sh '''docker build -t javaproject:1.0 /home/ubuntu/JavaProject'''
+     sh 'docker build -t javaproject:1.0 /home/ubuntu/JavaProject'
    }
   }
   stage('Deployment'){
