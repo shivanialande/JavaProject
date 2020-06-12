@@ -18,12 +18,13 @@ pipeline{
   }
   stage('Building of Docker Image'){
    steps{
-     sh 'docker build -t javaproject:1.0 /home/ubuntu/JavaProject'
+     sh 'cp /var/lib/jenkins/workspace/ArtifactsDeployToServer/target/JavaArtifact-1.0.0.jar /home/ubuntu/JavaProject/'
+     sh '''docker build -t javaproject:1.0 /home/ubuntu/JavaProject'''
    }
   }
   stage('Deployment'){
    steps{
-     sh 'docker run -p 8090:8090 --name HotelManagementApplication -d javaproject:1.0'
+     sh 'docker run -p 8090:8090 --name HotelManagementApplicationContainer -d javaproject:1.0'
  }
 }
 }
